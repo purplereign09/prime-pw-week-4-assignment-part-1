@@ -9,21 +9,22 @@ function hello() {
   return 'Hello World!';
 }
 // Call the function to test
-console.log('Test - should say', hello());
+console.log(hello());
 
 
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
-let name = 'Nicole!';
+
 function helloName( name ) {
-  return name;
+  return `Hello, ${name}`;
 }
-console.log(helloName( name));
+
+let name = 'Nicole!';
+console.log(helloName(name));
 // Remember to call the function to test
 
 
 // 3. Function to add two numbers together & return the result
-
 
 function addNumbers( firstNumber, secondNumber ) {
   return firstNumber + secondNumber;
@@ -50,9 +51,12 @@ console.log(multiplyThree(firstDigit, secondDigit, thirdDigit));
 //    or greater than zero, and false otherwise
 
 function isPositive( number ) {
+  //function will return true if a number is positive
   if ( number > 0 ){
+    //conditional statement that evaluates if a number is greater than zero
     return true;
-  } //else if (number < 0){
+    //if number is greater than zero return true
+    } //else if (number < 0)
     return false;
   }
 
@@ -78,59 +82,72 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
+let colors = ['red', 'yellow', 'green', 'blue'];
 
-function getLast() {
-  return getLast = colors[colors.length -1];
-  if(colors != array[array.length -1]) {
-  return undefined;
+function getLast( items ) {
+  //function to obtain the last item in an array
+  if(items.length > 0){
+    //if the array's length is greater than zero --if the array is NOT empty
+    return items[items.length-1]
+    //return the last item in the array
   }
 }
 
-const colors = ['red', 'yellow', 'green', 'blue'];
-console.log(getLast());
+console.log(getLast(colors));
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
-//function find( value, array ){
 
 function find( value, array ) {
+  //function to find a value within an array
   for(const item of array){
+    //for of loop to filter through each element from the array
     if (value === item) {
+      //if value passed exists as an item filtered through the array in the loop
       return true;
+      //return true
     }
+    return false;
+    //if the value is not in the array return false
   }
-  return false;
 }
 
   let value = 5;
   let array = [4, 5, 6, 7, 8];
 console.log(find(value, array));
+
 // ----------------------
 // Stretch Goals
+
 // ----------------------
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
+
+
 function isFirstLetter( letter, string ){
   if(letter === string[0]){
     return true;
-  } else return false;
+  }
+  return false;
 }
 
-let letter = '';
-string = '';
-console.log(isFirstLetter(letter, string));
+let letter = 'b';
+let string = 'books';
+console.log(isFirstLetter('b', 'books'));
 
 //console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 //console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-
-
 function sumAll(array) {
+  //function that returns the sum of an array
   let sum = 0;
+  //Declaring the variable sum
   for( const num of array ){
+    //a for of loop to run every number in the array
     sum += num;
+    //sum = sum + num--the sum of all of the numbers
   }
   return sum;
 }
@@ -146,19 +163,26 @@ console.log(sumAll(numberArray));
 prompt('What are your coordinates?');
 
 
-function getPositives([array]){
-  let x = i
-  while(i > 0){
-  return posArr = [(i > 0)];
+function getPositives(numbers){
+  // function that takes user input of all numbers
+  let newArray = [];
+  //creation of a new array to store postive numbers from user input
+  for(let number of numbers){
+    //for of loop to iterate through user input array
+    if(number > 0){
+      //if statement to filter out postive numbers from user inputt list
+      newArray.push(number)
+      //push function to add postive numbers into new array of postive numbers
+    }
+
   }
-}
+    return newArray
+    //returning a new array of postive numbers from a user input array
 
-let inputArray = [];
-console.log(getPositives(inputArray));
-//calculation will not change
-//shall return only positive numbers > 0
-//takes input from user
+}//end getPositives
 
+let i = [5, 4, 3, 2, -2];
+console.log(getPositives(i));
 
 
 
@@ -172,8 +196,29 @@ console.log(getPositives(inputArray));
 //addition (-3, -6)
 //addition (7, 3)
 
-function sumThreeTwo(3, 2) {
+function sumThreeTwo(a, b) {
   return a + b;
 }
 
-console.log(sumThreeTwo());
+let a = 3;
+let b = 2;
+console.log(sumThreeTwo(3, 2));
+
+
+function sumThreeSix(c, d) {
+  return c + d;
+}
+
+let c = -3;
+let d = -6;
+console.log(sumThreeSix(-3, -6));
+
+
+
+function sumSevenThree(e, f) {
+  return e + f;
+}
+
+let e = 7;
+let f = 3;
+console.log(sumSevenThree(7, 3));
